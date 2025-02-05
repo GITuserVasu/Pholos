@@ -1,0 +1,200 @@
+	
+
+<div class="container" style="padding:50px">
+    <div class="row">
+        <div class="col-md-3">
+            <button style=" color: #000000;
+            background: #f5f5f5;
+            border: none;font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 11px 15px 10px;
+            margin: 0 0 10px 0;
+            border: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease 0s;" (click)="insurancemenu()">Insurance</button>
+              <button style=" color: #000000;
+              background: #f5f5f5;
+              border: none;font-size: 18px;
+              font-weight: 800;
+              letter-spacing: 1px;
+              text-align: center;
+              text-transform: uppercase;
+              padding: 11px 15px 10px;
+              margin: 0 0 10px 0;
+              border: none;
+              box-shadow: 0 0 5px rgba(0,0,0,0.1);
+              border-radius: 0;
+              overflow: hidden;
+              position: relative;
+              z-index: 1;
+            transition: all 0.3s ease 0s;" (click)="healthmenu()">Healthcare</button>
+            <button style=" color: #000000;
+            background: #f5f5f5;
+            border: none;font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 11px 15px 10px;
+            margin: 0 0 10px 0;
+            border: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease 0s;" (click)="realestatemenu()">Real Estate</button>
+              <button style=" color: #000000;
+              background: #f5f5f5;
+              border: none;font-size: 18px;
+              font-weight: 800;
+              letter-spacing: 1px;
+              text-align: center;
+              text-transform: uppercase;
+              padding: 11px 15px 10px;
+              margin: 0 0 10px 0;
+              border: none;
+              box-shadow: 0 0 5px rgba(0,0,0,0.1);
+              border-radius: 0;
+              overflow: hidden;
+              position: relative;
+              z-index: 1;
+            transition: all 0.3s ease 0s;" (click)="legalmenu()">Legal</button>
+           
+        </div>
+        <div class="col-md-9" *ngIf="insuranceShow">
+            <div class="card" style="padding: 20px;">
+                <!-- <h4>Industry: Insurance </h4>
+                <br>
+                <h5>Title: Policy Valuation</h5> -->
+                <!-- <div><b><h6 *ngFor="let row of UCpageData"> 
+                  <div>{{row}}</div><br>
+                  </h6></b></div>  -->   
+                <div><b><h6> 
+                    <div *ngIf="industry"><b>Industry:</b>&nbsp; {{industry}}<br><br></div>
+                    <div *ngIf="title"><b>Title:</b>&nbsp; {{title}}<br><br></div>
+                    <div *ngIf="userPersona"><b>User Persona:</b>&nbsp; {{userPersona}}<br><br></div>
+                    <div *ngIf="process"><b>Process:</b>&nbsp; {{process}}<br><br></div>
+                    <div *ngIf="description"><b>Description:</b>&nbsp; {{description}}<br><br></div>
+                    <div *ngIf="processDiagram"><b>Process Diagram:</b>&nbsp; {{processDiagram}}<br><br></div>
+                    <div *ngIf="input"><b>Input:</b>&nbsp; {{input}}<br><br></div>
+                    <div *ngIf="sampleInput"><b>Sample Input:</b>&nbsp; {{sampleInput}}<br><br></div>
+                    <div *ngIf="output"><b>Output:</b>&nbsp; {{output}}<br><br></div>
+                    <div *ngIf="sampleOutput"><b>Sample Output:</b>&nbsp; {{sampleOutput}}<br><br></div>
+                    <div *ngIf="videoLink"><b>Video Link:</b>&nbsp; {{videoLink}}<br><br></div>
+                    <div *ngIf="otherLink"><b>Other Link:</b>&nbsp; {{otherLink}}<br><br></div>
+                    <div *ngIf="otherCollateral"><b>Other Collateral:</b>&nbsp; {{otherCollateral}}<br><br></div>
+                    </h6></b></div>    
+                  <a href="https://ezaitool.com">Try it Now !!</a>
+            <!-- <p style="line-height: 33px;
+            font-size: 14px;">
+                <b>User Persona:</b> Brokers, Investors, Trusts, Agents<br>
+                <b>Process: </b>Valuation of a life insurance policy<br>
+                <b>Description:</b> Investors buying and selling life insurance in the tertiary market need to peruse hundreds of pages of policy documents, insured’s health related documents. Instead of the time consuming process of manually doing the perusal, the tools allows for searching the documents for specific words and phrases, evaluating trends in health statistics over time, and extracting table data into spreadsheets.<br>
+                
+                <b>Typical Input:</b> Policy Annual Statement, Policy Illustration, Health documents<br>
+                <b>Typical Output:</b> Search results of specified terms, CSV files of tables<br>
+                
+                <a href="https://ezaitool.com">Try it Now !!</a><br>
+
+            </p> -->
+            </div>
+            <!-- <div class="row">
+              <div class="col-md-3">
+                </div>
+              <div class="col-md-9">
+                  <div class="card" style="padding: 20px;">
+                    Placeholder for video - Coming Soon !
+                  </div>
+                </div>  
+            </div>      -->
+        </div>
+        <div class="col-md-9" *ngIf="healthShow" >
+            <div class="card" style="padding: 20px;"> <h4>Coming soon </h4></div> 
+        
+        </div>
+        
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="row">
+        <div class="col-md-3" *ngIf="insurancemenuShow">
+            <button style=" color: #000000;
+            background: #f5f5f5;
+            border: none;font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 11px 15px 10px;
+            margin: 0 0 10px 0;
+            border: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease 0s;" (click)="PolicyValuation()">Policy Valuation</button> </div>
+            <div class="col-md-3" *ngIf="healthmenuShow">
+              <button style=" color: #000000;
+              background: #f5f5f5;
+              border: none;font-size: 12px;
+              font-weight: 800;
+              letter-spacing: 1px;
+              text-align: center;
+              text-transform: uppercase;
+              padding: 11px 15px 10px;
+              margin: 0 0 10px 0;
+              border: none;
+              box-shadow: 0 0 5px rgba(0,0,0,0.1);
+              border-radius: 0;
+              overflow: hidden;
+              position: relative;
+              z-index: 1;
+            transition: all 0.3s ease 0s;" (click)="health()">Healthcare</button> </div>
+            <div class="col-md-3" *ngIf="realestatemenuShow">
+            <button style=" color: #000000;
+            background: #f5f5f5;
+            border: none;font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 11px 15px 10px;
+            margin: 0 0 10px 0;
+            border: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease 0s;" (click)="realestate()">Real Estate</button></div>
+            <div class="col-md-3" *ngIf="legalmenuShow">
+              <button style=" color: #000000;
+              background: #f5f5f5;
+              border: none;font-size: 12px;
+              font-weight: 800;
+              letter-spacing: 1px;
+              text-align: center;
+              text-transform: uppercase;
+              padding: 11px 15px 10px;
+              margin: 0 0 10px 0;
+              border: none;
+              box-shadow: 0 0 5px rgba(0,0,0,0.1);
+              border-radius: 0;
+              overflow: hidden;
+              position: relative;
+              z-index: 1;
+            transition: all 0.3s ease 0s;" (click)="legal()">Legal</button> </div>
+           
+        
+    </div>
+</div>
+
+    

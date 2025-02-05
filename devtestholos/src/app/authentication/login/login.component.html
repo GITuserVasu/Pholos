@@ -1,0 +1,124 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+            <div class="row justify-content-center"> 
+             <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card overflow-hidden">
+                    <div class="bg-primary bg-soft">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="text-primary p-4">
+                                    <h5 class="text-primary">Welcome !</h5>
+                                    <p>Please sign in.</p>
+                                </div>
+                            </div>
+                            <div class="col-5 align-self-end">
+                                <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="auth-logo">
+                            <a href="index.html" class="auth-logo-dark">
+                                <div class="avatar-md profile-user-wid mb-4">
+                                    <span class="avatar-title rounded-circle bg-light">
+                                        <img src="assets/images/gaiadhi-logo.png" alt="" class="rounded-circle" height="34">
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="p-2">
+                            <!-- <a routerLink="employee" class="text-muted" style="position: relative;
+                            bottom: 59px;
+                            left: 68%;
+                            font-weight: 500;    color: #0000ad !important;"><i class="mdi mdi-lock me-1"></i> Employee Login</a> -->
+		    <!--<form [formGroup]="loginData" class="form-horizontal" (ngSubmit)="onSubmit()"> -->
+                            <form [formGroup] = "loginData" class="form-horizontal" (ngSubmit)="onSubmit()">
+
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Enter username"
+                                        formControlName="email">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <div class="input-group auth-pass-inputgroup">
+                                        <input [type]="password" class="form-control" placeholder="Enter password"
+                                            formControlName="password">
+
+
+
+                                        <button class="btn btn-light " type="button" id="password-addon"
+                                            (click)="onClick()">
+                                            <i class="mdi mdi-eye-outline" *ngIf="!show"></i>
+                                            <i class="mdi mdi-eye-off" *ngIf="show"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3 d-grid">
+                                    <button class="btn btn-primary waves-effect waves-light" type="submit">Log
+                                        In</button>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="mt-4 col-lg-6 text-center">
+                                        <a routerLink="forgot-password" class="text-muted"><i
+									class="mdi mdi-lock me-1"></i> Forgot password?</a>
+                                    </div>
+                                    <div class="mt-4 col-lg-6 text-center">
+                                        <!-- routerLink="registrationPage" -->
+                                        <a data-toggle="modal" data-target="#exampleModal"  class="text-muted"><i class="mdi mdi-lock me-1"></i> New Registration</a>
+                                    </div>
+
+                                    
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registration (Please click on one of the options)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"
+                            (click)="redirectUrl('Company')" data-dismiss="modal" checked >&nbsp;&nbsp;
+                        <label class="custom-control-label" for="customRadio1"><strong> Manager Registration</strong></label>
+                    </div>
+                <br>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"
+                            (click)="redirectUrl('employee')" data-dismiss="modal" disabled >&nbsp;&nbsp;
+                        <label class="custom-control-label" for="customRadio2">Team Member Registration</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <!-- <button type="button" class="btn btn-primary">Done</button> -->
+                </div>
+            </div>
+        </div>
+    </div>

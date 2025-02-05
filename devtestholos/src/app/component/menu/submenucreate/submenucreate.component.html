@@ -1,0 +1,60 @@
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Menu</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Create Menu</h4>
+                <form [formGroup]="subMenudata">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Menu List</label>
+                                <select class="form-control" formControlName="menu_id" [ngClass]="{ 'is-invalid': (submitted && form.menu_id.errors)||(form.menu_id.touched && form.menu_id.errors) }" placeholder="Select Here">
+                                    <option>-- Select --</option>
+                                    <option *ngFor="let row of menudata" value="{{row.id}}|{{row.name}}">{{row.name}}</option>
+                                </select>
+
+                                
+                                <div *ngIf="submitted||(form.menu_id.touched && form.menu_id.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.menu_id.errors">Main Menu is 
+                              required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Sub Menu Name</label>
+                                <input type="text" class="form-control" formControlName="sub_menu" [ngClass]="{ 'is-invalid': (submitted && form.sub_menu.errors)||(form.sub_menu.touched && form.sub_menu.errors) }">
+                                <div *ngIf="submitted||(form.sub_menu.touched && form.sub_menu.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.sub_menu.errors">Sub Menu Name
+                              required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Url</label>
+                                <input type="text" class="form-control" formControlName="url" [ngClass]="{ 'is-invalid': (submitted && form.url.errors)||(form.url.touched && form.url.errors) }">
+                                <div *ngIf="submitted||(form.url.touched && form.url.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.url.errors">Url
+                              required</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" (click)='submitData()'  class="btn btn-primary w-md" value="Save">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

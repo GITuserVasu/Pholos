@@ -1,0 +1,303 @@
+<!-- start page title -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Models </h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Models</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row">
+    <label> Choose Validated Dataset </label>
+    <div class="col-md-12">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <span class="input-group">
+                            <label> Data Set </label>
+                            &nbsp; &nbsp;
+                            <select #dataset id="dataset" value="none" (change)="datasetselectonchange(dataset.value)">
+                                <option value="none">Choose One</option>
+                                <option value="coimbatore1">Coimbatore 1</option>
+                            </select>
+                            &nbsp; &nbsp;&nbsp; &nbsp;
+                            <div *ngIf="dataset.value == 'coimbatore1'">
+                                This dataset consists of data from Coimbatore, TamilNadu. The crop is rice (multiple
+                                varieties)
+                                &nbsp; &nbsp;
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <label> Choose Location </label>
+    <div class="col-md-12">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+
+                        <div class="col-md-6">
+                            <input class="form-check-input" type="radio" name="locRadio" id="locRadio1"
+                                value="useblockname" formControlName="blockname"
+                                (change)="locradiobuttonchange($event)" checked>
+                            &NonBreakingSpace;&NonBreakingSpace;
+                            <label class="form-check-label" for="locRadio1">
+                                Use District Block Name
+                            </label>
+                            <!-- </div> -->
+                            <!--<div class="col-md-6"> -->
+                            &NonBreakingSpace;&NonBreakingSpace;
+                            <input class="form-check-input" type="radio" name="locRadio" id="locRadio2" value="usemap"
+                                formControlName="usemap" (change)="locradiobuttonchange($event)">
+                            &NonBreakingSpace;&NonBreakingSpace;
+                            <label class="form-check-label" for="locRadio2">
+                                Use Map
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <label> Enter Farm or Field on the map <strong>OR</strong> select the relevant block in the drop down list </label>
+    <div class="col-md-12">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <span class="input-group">
+                            <!-- <label> Location </label>
+                            &nbsp; &nbsp; -->
+                            <div class="col-md-4">
+                                <!-- <div *ngIf="useblockname == true"> -->
+                                <select #location id="location" value="none"
+                                    (change)="locationselectonchange(location.value)">
+                                    <option value="none">Choose One</option>
+                                    <option value="LAT 10.418840 LONG 77.139200">Anamalai</option>
+                                    <option value="LAT 13.359660 LONG 79.416328">Annur</option>
+                                    <option value="LAT 11.189200 LONG 77.269940">Avanashi</option>
+                                    <option value="LAT 10.695830 LONG 77.280600">Gudimangalam</option>
+                                    <option value="LAT 11.239340 LONG 76.958420">Karamadai</option>
+                                    <option value="LAT 10.818040 LONG 77.017840">Kinathukadavu</option>
+                                    <option value="LAT 10.565120 LONG 77.348450">Madathukulam</option>
+                                    <option value="LAT 10.95 LONG 77.1">Madukkarai</option>
+                                    <option value="LAT 10.95 LONG 77.1">Palladam</option>
+                                    <option value="LAT 10.95 LONG 77.1">Periyanayakkanpalayam</option>
+                                    <option value="LAT 10.95 LONG 77.1">Pollachi(North)</option>
+                                    <option value="LAT 10.95 LONG 77.1">Pollachi(South)</option>
+                                    <option value="LAT 10.95 LONG 77.1">Pongalur</option>
+                                    <option value="LAT 10.95 LONG 77.1">Sarcarsamakulam</option>
+                                    <option value="LAT 10.95 LONG 77.1">Sultanpet</option>
+                                    <option value="LAT 10.95 LONG 77.1">Sulur</option>
+                                    <option value="LAT 10.95 LONG 77.1">Thondamuthur</option>
+                                    <option value="LAT 10.95 LONG 77.1">Tiruppur</option>
+                                    <option value="LAT 10.95 LONG 77.1">Udumalaipettai</option>
+                                    <!-- <option value="LAT 10.95 LONG 77.1">work_x_zero_y_zero LAT 10.95 LONG 77.1</option>
+<option value="LAT 10.95 LONG 77.15">work_x_pos1_y_zero LAT 10.95 LONG 77.15</option>
+<option value="LAT 10.95 LONG 77.06">work_x_neg1_y_zero LAT 10.95 LONG 77.06</option>
+<option value="LAT 11 LONG 77.1">work_x_zero_y_pos1 LAT 11 LONG 77.1</option>
+<option value="LAT 10.91 LONG 77.1">work_x_zero_y_neg1 LAT 10.91 LONG 77.1</option>
+<option value="LAT 10.95 LONG 77.19">work_x_pos2_y_zero LAT 10.95 LONG 77.19</option>
+<option value="LAT 11 LONG 77.15">work_x_pos1_y_pos1 LAT 11 LONG 77.15</option>
+<option value="LAT 10.91 LONG 77.15">work_x_pos1_y_neg1 LAT 10.91 LONG 77.15</option>
+<option value="LAT 10.95 LONG 77.01">work_x_neg2_y_zero LAT 10.95 LONG 77.01</option>
+<option value="LAT 11 LONG 77.06">work_x_neg1_y_pos1 LAT 11 LONG 77.06</option>
+<option value="LAT 10.91 LONG 77.06">work_x_neg1_y_neg1 LAT 10.91 LONG 77.06</option>
+<option value="LAT 11.04 LONG 77.1">work_x_zero_y_pos2 LAT 11.04 LONG 77.1</option>
+<option value="LAT 10.95 LONG 77.24">work_x_pos3_y_zero LAT 10.95 LONG 77.24</option>
+<option value="LAT 11 LONG 77.19">work_x_pos2_y_pos1 LAT 11 LONG 77.19</option>
+<option value="LAT 10.91 LONG 77.19">work_x_pos2_y_neg1 LAT 10.91 LONG 77.19</option>
+<option value="LAT 11.04 LONG 77.15">work_x_pos1_y_pos2 LAT 11.04 LONG 77.15</option>
+<option value="LAT 10.86 LONG 77.15">work_x_pos1_y_neg2 LAT 10.86 LONG 77.15</option>
+<option value="LAT 10.95 LONG 76.96">work_x_neg3_y_zero LAT 10.95 LONG 76.96</option>
+<option value="LAT 11 LONG 77.01">work_x_neg2_y_pos1 LAT 11 LONG 77.01</option>
+<option value="LAT 11.04 LONG 77.06">work_x_neg1_y_pos2 LAT 11.04 LONG 77.06</option>
+<option value="LAT 11.09 LONG 77.1">work_x_zero_y_pos3 LAT 11.09 LONG 77.1</option>
+<option value="LAT 10.95 LONG 77.28">work_x_pos4_y_zero LAT 10.95 LONG 77.28</option>
+<option value="LAT 11 LONG 77.24">work_x_pos3_y_pos1 LAT 11 LONG 77.24</option>
+<option value="LAT 10.91 LONG 77.24">work_x_pos3_y_neg1 LAT 10.91 LONG 77.24</option>
+<option value="LAT 11.04 LONG 77.19">work_x_pos2_y_pos2 LAT 11.04 LONG 77.19</option>
+<option value="LAT 10.86 LONG 77.19">work_x_pos2_y_neg2 LAT 10.86 LONG 77.19</option>
+<option value="LAT 11.09 LONG 77.15">work_x_pos1_y_pos3 LAT 11.09 LONG 77.15</option>
+<option value="LAT 11 LONG 76.96">work_x_neg3_y_pos1 LAT 11 LONG 76.96</option>
+<option value="LAT 11.04 LONG 77.01">work_x_neg2_y_pos2 LAT 11.04 LONG 77.01</option>
+<option value="LAT 11.09 LONG 77.06">work_x_neg1_y_pos3 LAT 11.09 LONG 77.06</option>
+<option value="LAT 10.95 LONG 77.33">work_x_pos5_y_zero LAT 10.95 LONG 77.33</option>
+<option value="LAT 11 LONG 77.28">work_x_pos4_y_pos1 LAT 11 LONG 77.28</option>
+<option value="LAT 10.91 LONG 77.28">work_x_pos4_y_neg1 LAT 10.91 LONG 77.28</option>
+<option value="LAT 11.04 LONG 77.24">work_x_pos3_y_pos2 LAT 11.04 LONG 77.24</option>
+<option value="LAT 10.86 LONG 77.24">work_x_pos3_y_neg2 LAT 10.86 LONG 77.24</option>
+<option value="LAT 11.09 LONG 77.19">work_x_pos2_y_pos3 LAT 11.09 LONG 77.19</option>
+<option value="LAT 11 LONG 76.92">work_x_neg4_y_pos1 LAT 11 LONG 76.92</option>
+<option value="LAT 11.04 LONG 76.96">work_x_neg3_y_pos2 LAT 11.04 LONG 76.96</option>
+<option value="LAT 11.09 LONG 77.01">work_x_neg2_y_pos3 LAT 11.09 LONG 77.01</option>
+<option value="LAT 11 LONG 77.33">work_x_pos5_y_pos1 LAT 11 LONG 77.33</option>
+<option value="LAT 10.91 LONG 77.33">work_x_pos5_y_neg1 LAT 10.91 LONG 77.33</option>
+<option value="LAT 11.04 LONG 77.28">work_x_pos4_y_pos2 LAT 11.04 LONG 77.28</option>
+<option value="LAT 10.86 LONG 77.28">work_x_pos4_y_neg2 LAT 10.86 LONG 77.28</option>
+<option value="LAT 11.09 LONG 77.24">work_x_pos3_y_pos3 LAT 11.09 LONG 77.24</option>
+<option value="LAT 10.82 LONG 77.24">work_x_pos3_y_neg3 LAT 10.82 LONG 77.24</option>
+<option value="LAT 11 LONG 76.87">work_x_neg5_y_pos1 LAT 11 LONG 76.87</option>
+<option value="LAT 11.04 LONG 76.92">work_x_neg4_y_pos2 LAT 11.04 LONG 76.92</option>
+<option value="LAT 11.09 LONG 76.96">work_x_neg3_y_pos3 LAT 11.09 LONG 76.96</option>
+<option value="LAT 11 LONG 77.38">work_x_pos6_y_pos1 LAT 11 LONG 77.38</option>
+<option value="LAT 11.04 LONG 77.33">work_x_pos5_y_pos2 LAT 11.04 LONG 77.33</option>
+<option value="LAT 11.09 LONG 77.28">work_x_pos4_y_pos3 LAT 11.09 LONG 77.28</option>
+<option value="LAT 10.82 LONG 77.28">work_x_pos4_y_neg3 LAT 10.82 LONG 77.28</option>
+<option value="LAT 11.04 LONG 76.87">work_x_neg5_y_pos2 LAT 11.04 LONG 76.87</option>
+<option value="LAT 11.09 LONG 76.92">work_x_neg4_y_pos3 LAT 11.09 LONG 76.92</option>
+<option value="LAT 11.04 LONG 77.38">work_x_pos6_y_pos2 LAT 11.04 LONG 77.38</option>
+<option value="LAT 11.09 LONG 77.33">work_x_pos5_y_pos3 LAT 11.09 LONG 77.33</option>
+<option value="LAT 11.04 LONG 76.83">work_x_neg6_y_pos2 LAT 11.04 LONG 76.83</option>
+<option value="LAT 11.09 LONG 76.87">work_x_neg5_y_pos3 LAT 11.09 LONG 76.87</option>
+<option value="LAT 11.09 LONG 77.38">work_x_pos6_y_pos3 LAT 11.09 LONG 77.38</option>
+<option value="LAT 11.04 LONG 76.78">work_x_neg7_y_pos2 LAT 11.04 LONG 76.78</option>
+<option value="LAT 11.09 LONG 76.83">work_x_neg6_y_pos3 LAT 11.09 LONG 76.83</option>
+<option value="LAT 11.09 LONG 77.42">work_x_pos7_y_pos3 LAT 11.09 LONG 77.42</option>
+<option value="LAT 11.09 LONG 76.78">work_x_neg7_y_pos3 LAT 11.09 LONG 76.78</option>
+ -->
+                                </select>
+                            </div>
+                               
+                    <div class="col-md-8">
+                        <div>
+                            <form class="form-inline">
+                                <button (click)="clearMap($event)"> Clear Map </button>
+                                &nbsp; &nbsp;
+                                <button (click)="undolastpoint($event)">Undo Last Point</button>
+                                &nbsp; &nbsp;
+                            </form>     
+                            <div id="map" class="map"> </div>
+                        </div>
+                    </div>
+                    </span>
+
+                </div>
+                <!-- &nbsp; &nbsp;&nbsp; &nbsp; -->
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- <div class="row" >
+    <label> Enter Farm or Field on the map OR select the relevant block in the drop down list </label>
+    <div class="col-md-12">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <div class="col-md-6">
+                            <!-- <div *ngIf="usemap == true"> -->
+<!-- <div id="map" class="map"> </div> -->
+<!-- </div> -->
+<!--</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> -->
+<div class="row">
+    <label> Enter Inputs </label>
+    <div class="col-md-12">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <span class="input-group">
+                            <label> Cultivar</label>&nbsp; &nbsp;
+                            <select #cultivar id="cultivar" value="none" (change)="cultivarselectonchange(cultivar.value)">
+                                <option value="none">Choose One</option>
+                                <option value="ADT43">ADT43</option>
+                                <option value="ADT45">ADT45</option>
+                                <option value="CO51">CO51</option>
+                                <option value="ASD16">ASD16</option>
+                                <option value="ADT36">ADT36</option>
+                            </select>
+                            &nbsp; &nbsp;&nbsp; &nbsp;
+                            <label> Planting Date</label>&nbsp; &nbsp;
+                            <input type="date" id="pdate" name="pdate">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <label> Choose Model </label>
+    <div class="col-md-12">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+
+                        <div class="col-md-6">
+                            <input class="form-check-input" type="radio" name="NNRadio" id="NNRadio1"
+                                value="NeuralNetwork" formControlName="neuralnetwork"
+                                (change)="modelradiobuttonchange($event)" checked>
+                            &NonBreakingSpace;&NonBreakingSpace;
+                            <label class="form-check-label" for="NNRadio1">
+                                Neural Network
+                            </label>
+                            <!-- </div>
+                            <div class="col-md-6"> -->
+                            &NonBreakingSpace;&NonBreakingSpace;
+                            <input class="form-check-input" type="radio" name="NNRadio" id="NNRadio2"
+                                value="RandomForest" formControlName="randomforest"
+                                (change)="modelradiobuttonchange($event)">
+                            &NonBreakingSpace;&NonBreakingSpace;
+                            <label class="form-check-label" for="NNRadio2">
+                                Random Forest
+                            </label>
+                        </div>
+                        <!-- <span class="input-group">
+                            <label> Neural Network Model </label>
+                            &nbsp; &nbsp;
+                            
+                            &nbsp; &nbsp;&nbsp; &nbsp;
+
+                            <label> Random Forest </label>&nbsp; &nbsp;
+                             
+                        </span>
+                    -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mini-stats-wid">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <input type="button" class="btn btn-primary float-end" value="Predict" (click)="onSubmit()">
+                        <!-- [disabled]="fileUpload.invalid"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

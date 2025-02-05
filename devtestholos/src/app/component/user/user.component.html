@@ -1,0 +1,116 @@
+
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Employee Registration</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Create Employee</h4>
+                <form [formGroup]="emplayeeRegister">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">First Name</label>
+                                <input type="text" class="form-control" formControlName="firstname" [ngClass]="{ 'is-invalid': (submitted && form.firstname.errors)||(form.firstname.touched && form.firstname.errors) }">
+                                    <div *ngIf="submitted||(form.firstname.touched && form.firstname.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.firstname.errors">First Name Required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" formControlName="lastname" [ngClass]="{ 'is-invalid': (submitted && form.lastname.errors)||(form.lastname.touched && form.lastname.errors) }">
+                                 <div *ngIf="submitted||(form.lastname.touched && form.lastname.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.lastname.errors">Last Name Required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Email</label>
+                                <input type="text" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': (submitted && form.email.errors)||(form.email.touched && form.email.errors) }">
+                                 <div *ngIf="submitted||(form.email.touched && form.email.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.email.errors?.required">Email
+                              Required</small>
+                              <small class="form-text error-message" *ngIf="form.email.errors?.email">Email Pattern Required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Department Name</label>
+                               
+
+                                <select  class="form-control" formControlName="department" [ngClass]="{ 'is-invalid': (submitted && form.department.errors)||(form.department.touched && form.department.errors) }" [(ngModel)]="depSelected">
+                                    <option>-- Select --</option>
+                                    <option *ngFor="let row of departmentList" value="{{row.id}}|{{row.name}}" > {{row.name}}</option>
+                                </select> 
+                                 <div *ngIf="submitted||(form.department.touched && form.department.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.department.errors">Department Required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Role</label>
+                            
+                                <select class="form-control" formControlName="role"  [ngClass]="{ 'is-invalid': (submitted && form.role.errors)||(form.role.touched && form.role.errors) }"  [(ngModel)]="roleSelected">
+                                    <option>-- Select --</option>
+                                    <option *ngFor="let row of roleList" value="{{row.id}}|{{row.name}}"> {{row.name}}</option>
+                                </select>
+                                <div *ngIf="submitted||(form.role.touched && form.role.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.role.errors">Role Required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Username</label>
+                                <input type="text" class="form-control" formControlName="username" [ngClass]="{ 'is-invalid': (submitted && form.username.errors)||(form.username.touched && form.username.errors) }">
+                                <div *ngIf="submitted||(form.username.touched && form.username.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.username.errors">Username
+                              required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Password</label>
+                                <input type="password" class="form-control" formControlName="password" readonly>
+                                <!-- 
+                                    [ngClass]="{ 'is-invalid': (submitted && form.org_name.errors)||(form.org_name.touched && form.org_name.errors) }"
+                                    <div *ngIf="submitted||(form.org_name.touched && form.org_name.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.org_name.errors">Organization Name
+                              required</small>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Address</label>
+                                <textarea class="form-control" formControlName="address" [ngClass]="{ 'is-invalid': (submitted && form.address.errors)||(form.address.touched && form.address.errors) }"></textarea>
+                                <div *ngIf="submitted||(form.address.touched && form.address.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.address.errors">Address feild Required</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                
+            </div>
+            <div>
+                <input type="submit" (click)='onSubmit()' *ngIf="!isEdit" class="btn btn-primary w-md" value="Save" [disabled]='emplayeeRegister.invalid'>
+                <input type="submit" (click)='updateData()' *ngIf="isEdit" class="btn btn-primary w-md" value="Update">
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

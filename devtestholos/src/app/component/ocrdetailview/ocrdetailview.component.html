@@ -1,0 +1,337 @@
+<!-- start page title -->
+
+<div class="row">
+  <div class="col-12">
+    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+      <h4 class="mb-sm-0 font-size-18">Project Results </h4>
+
+      <div class="page-title-right">
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+          <li class="breadcrumb-item active">Project Results</li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end page title -->
+
+
+<div class="row">
+  <div class="col-md-3" style="height: 600px">
+    <div class="card mini-stats-wid">
+      <div class="card-body">
+        <!-- <h3 class="card-title">Document View</h3> -->
+        <div class="scrollable" style="overflow-y: auto; max-height: 500px;">
+        <ul class="nav nav-tabs nav-fill" data-bs-toggle="tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a href="#tabs-document-14" class="nav-link active" data-bs-toggle="tab" aria-selected="true" tabindex="-1"
+              role="tab">Inputs</a>
+          </li>
+        <!--  <li class="nav-item" role="presentation">
+            <a href="#tabs-meta-14" class="nav-link" data-bs-toggle="tab" aria-selected="false" tabindex="-1"
+              role="tab">Recommendations</a>
+          </li> -->
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tabs-document-14" role="tabpanel"> 
+           <br>
+           <p>
+           <strong>General Info:</strong> <br>
+           User: {{username}} <br>
+           Company ID: {{orgid}} <br>
+           ProjectName: {{projectname}} <br>
+           Holos Product: {{selectedholosproduct}} <br>
+           Farm Name: {{farmname}} <br>
+           Status: {{exptstatus}} <br>
+           </p>
+           <p>
+           <strong>Run Parameters:</strong> <br>
+           Sub Block Size: {{subblocksize}} <br>
+           <!-- num years and analogous year only for pre season-->
+           Number of years: {{nyers}} <br>
+           Analogous Weather Year: {{analogyear}} <br>
+           <!-- Period, Weather source, model, scenarios and atmospheric co2 level only for climate change-->
+           Target Planting Date: {{plantingdate}} <br>
+           Planting Method: {{plantingmethod}} <br>
+           Plants per sq m: {{plantdensity}} <br>
+           </p>
+           <p>
+            <strong>Files:</strong> <br>
+            X File:   {{Xfilename}} <br>
+            CUL File: {{CULfilename}} <br>
+            </p> 
+            <!-- <p>
+            <strong>Constraints:</strong> <br>
+            Maximize Unadjusted Yield (kg/ha) for <br>
+            <li>CO2 Emitted (kg/ha) should be less-than 1500</li>
+            <li>CO2 Emitted (kg/ha) should be less-than 500</li>
+            </p> -->
+           
+
+          <!-- </div>
+
+          <div class="tab-pane " id="tabs-meta-14" role="tabpanel"> -->
+           <!-- <h6 *ngFor="let row of page_summary">{{row}}</h6> -->
+           
+<!-- <br>
+<strong>Holos Recommendations</strong><br><br>
+<h6 *ngFor="let row of reco"><p>{{row}}</p></h6>  -->
+
+<!-- <div>{{reco}}</div>  -->
+
+           </div>
+     </div>
+        </div> 
+       <!-- <embed [src]=pdfSrc style="width: 100%;height: 500px" type="application/pdf">
+        <img *ngIf="fileviewrshow != 'pdf'" [src]="pdfSrc" alt="" style="width: 100%"> -->
+     </div>
+    </div>
+ </div>
+ <div class="col-md-9" style="height: 600px">
+  <div class="card mini-stats-wid">
+     <!-- <button class="btn btn-primary float-end" (click)="downloadzipfile()">Download Zip file</button>  -->
+     <button class="btn btn-primary float-end" (click)="downloadzipfile()">Download Zip file</button>
+    <div class="card-body">
+      <div class="scrollable" style="overflow-y: auto; max-height: 500px;">
+        <h3 class="card-title">Results</h3>
+
+        <ul class="nav nav-tabs nav-fill" data-bs-toggle="tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a href="#tabs-meta-14" class="nav-link active" data-bs-toggle="tab" aria-selected="true" tabindex="-1"
+              role="tab">Recommendations</a>
+          </li>
+          <li class="nav-item" role="presentation">
+              <a href="#tabs-home-14" class="nav-link" data-bs-toggle="tab" aria-selected="false" role="tab">Yield/Cultivar</a>
+            </li>
+          <li class="nav-item" role="presentation">
+            <a href="#tabs-plantingdate-14" class="nav-link" data-bs-toggle="tab" aria-selected="false" tabindex="-1"
+              role="tab">Yield/Planting Date</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="#tabs-search-14" class="nav-link" data-bs-toggle="tab" aria-selected="false" tabindex="-1"
+              role="tab">CO2</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="#tabs-activity-14" class="nav-link" data-bs-toggle="tab" aria-selected="false" tabindex="-1"
+              role="tab">N2</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a href="#tabs-tables-14" class="nav-link" data-bs-toggle="tab" aria-selected="false" tabindex="-1"
+              role="tab">Water</a>
+          </li>
+          <li class="nav-item" role="presentation">
+                      <a href="#tabs-statcharts-14" class="nav-link" data-bs-toggle="tab" aria-selected="false"
+                          role="tab">Stat Charts</a><br>
+                  </li>
+          <li class="nav-item" role="presentation">
+                    <a href="#tabs-maplayers-14" class="nav-link" data-bs-toggle="tab" aria-selected="false"
+                        role="tab">Maps</a><br>
+                </li>
+
+        </ul>
+
+        <div class="tab-content">
+          <!-- <div class="tab-pane active show" id="tabs-document-14" role="tabpanel"> -->
+            <!-- <embed [src]=pdfSrc style="width: 100%;height: 500px" type="application/pdf">
+            <img *ngIf="fileviewrshow != 'pdf'" [src]="pdfSrc" alt="" style="width: 100%"> -->
+      <!--       <br>
+            <p>
+            <strong>General Info:</strong> <br>
+            User: {{username}} <br>
+            Company ID: {{orgid}} <br>
+            ProjectName: {{projectname}} <br>
+            Holos Product: {{selectedholosproduct}} <br>
+            Farm Name: {{farmname}} <br>
+            Status: {{exptstatus}} <br>
+            </p>
+            <p>
+            <strong>Run Parameters:</strong> <br>
+            Sub Block Size: {{subblocksize}} <br>
+            Number of years: {{nyers}} <br>
+            Analogous Weather Year: {{analogyear}} <br>
+            Target Planting Date: {{plantingdate}} <br>
+            Planting Method: {{plantingmethod}} <br>
+            Plants per sq m: {{plantdensity}} <br>
+            </p>
+            <p>
+             <strong>Files:</strong> <br>
+             X File:   {{Xfilename}} <br>
+             CUL File: {{CULfilename}} <br>
+             </p> -->
+             <!-- <p>
+             <strong>Constraints:</strong> <br>
+             Maximize Unadjusted Yield (kg/ha) for <br>
+             <li>CO2 Emitted (kg/ha) should be less-than 1500</li>
+             <li>CO2 Emitted (kg/ha) should be less-than 500</li>
+             </p> -->
+            
+ 
+          <!-- </div> -->
+ 
+          <div class="tab-pane " id="tabs-meta-14" role="tabpanel">
+            <!-- <h6 *ngFor="let row of page_summary">{{row}}</h6> -->
+            
+             <br>
+             <strong>Holos Recommendations</strong><br><br>
+             <h6 *ngFor="let row of reco"><p>{{row}}</p></h6> 
+ 
+              <!-- <div>{{reco}}</div>  -->
+ 
+          </div>
+      <!-- </div>
+         </div> -->
+        <!-- <embed [src]=pdfSrc style="width: 100%;height: 500px" type="application/pdf">
+         <img *ngIf="fileviewrshow != 'pdf'" [src]="pdfSrc" alt="" style="width: 100%"> -->
+       <!-- </div>
+     </div>
+  </div> -->
+          <div class="tab-pane" id="tabs-home-14" role="tabpanel">
+            <img src={{cultivarplot}} alt="Yield-Cultivar box plot" style="width:400px;height:400px;">
+            <!-- <img src="https://s3-us-east-2.amazonaws.com/docker-holos-spatial-dssat-trigger-bucket//191629/VasuVijay/41-test2/results/cultivar_yield_box_plot.png" alt="Yield-Cultivar box and whiskers plot" style="width:600px;height:300px;"> -->
+           
+            <img src={{yield_trend}} alt="Yield Trend" style="width:400px;height:400px;">
+           
+            <img src={{heatmapyield[0]}} alt="Delta Pine heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapyield[1]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapyield[2]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapyield[3]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapyield[4]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;"> 
+            <!-- <img src="/assets/temp/42-test1/results/cultivar_yield_box_plot.png" alt="Yield-Cultivar box and whiskers plot" style="width:600px;height:300px;"> -->
+            <!--<img src="/assets/temp/TanjoreRiceRecommendationsProject/2024_yield_for_ADT36_heatmap.png" alt="Yield-Cultivar box and whiskers plot" style="width:600px;height:300px;">
+            <img src="/assets/temp/TanjoreRiceRecommendationsProject/2024_yield_for_ADT45_heatmap.png" alt="Yield-Cultivar box and whiskers plot" style="width:600px;height:300px;">
+            <img src="/assets/temp/TanjoreRiceRecommendationsProject/2024_yield_for_ASD16_heatmap.png" alt="Yield-Cultivar box and whiskers plot" style="width:600px;height:300px;">
+            <img src="/assets/temp/TanjoreRiceRecommendationsProject/2024_yield_for_BPT5204_heatmap.png" alt="Yield-Cultivar box and whiskers plot" style="width:600px;height:300px;">
+            <img src="/assets/temp/TanjoreRiceRecommendationsProject/2024_yield_for_CO51_heatmap.png" alt="Yield-Cultivar box and whiskers plot" style="width:600px;height:300px;">
+ -->            <!-- <strong>Summary 1 (Google T5):</strong>
+              <br>
+              {{page_googleT5_summ}}
+              <br> <br>
+              <strong>Summary 2 (NLTK):</strong>
+              <br> -->
+              <!-- {{page_nltk_summ}} -->
+              <!-- <h6 *ngFor="let row of page_nltk_summ">{{row}}</h6> -->
+
+              <!-- <h6 *ngFor="let row of page_googleT5_summ">{{row}}</h6> -->
+            </div>
+           <!-- {{textButtonlink}} -->
+
+          <div class="tab-pane" id="tabs-plantingdate-14" role="tabpanel">
+            <img src={{pdatesplot}} alt="Yield-Cultivar box plot" style="width:400px;height:400px;">
+          </div>
+          
+          <div class="tab-pane" id="tabs-search-14" role="tabpanel">
+            <img src={{CO2plot}} alt="Cultivar CO2 plot" style="width:400px;height:400px;">
+
+            <img src={{co2_trend}} alt="CO2 Trend" style="width:400px;height:400px;">
+
+            <img src={{heatmapco2[0]}} alt="Delta Pine heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapco2[1]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapco2[2]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapco2[3]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapco2[4]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;"> 
+            <!-- <img src="/assets/temp/TanjoreRiceRecommendationsProject/cultivar_co2_box_plot.png" alt="Cultivar CO2 plot" style="width:600px;height:300px;"> -->
+            <!-- {{page_search_results}} -->
+            <!-- <h6 *ngFor="let row of page_search_results">{{row}}</h6> -->
+
+            <!-- <h6 *ngFor="let row of page_googleT5_summ">{{row}}</h6> -->
+          </div>
+        
+
+          <div class="tab-pane" id="tabs-activity-14" role="tabpanel">
+            <img src={{N2plot}} alt="Cultivar N2 plot" style="width:400px;height:400px;">
+
+            <img src={{n2_trend}} alt="N2 Trend" style="width:400px;height:400px;">
+
+            <img src={{heatmapn2[0]}} alt="Delta Pine heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapn2[1]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapn2[2]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapn2[3]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapn2[4]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;"> 
+            <!-- <img src="/assets/temp/TanjoreRiceRecommendationsProject/cultivar_n2_box_plot.png" alt="Cultivar CO2 plot" style="width:600px;height:300px;"> -->
+            <!--<div>Field:Value pairs for extractable fields like Name, Dates, Entities, etc</div>-->
+            <!-- <div> <br />
+              <table class="table" border="none">
+                <tr>
+                  <td style="text-align: center; vertical-align: center;">
+                    <div><label for="">Search For: </label> <input [(ngModel)]="searchText" name="searchText"
+                        id="searchText" type="search"></div> &nbsp;&nbsp;&nbsp;
+                  </td>
+                  <td style="text-align: center; vertical-align: center;">
+                    <div><a [href]="fileUrl" download="Text.txt" (click)="downloadtxt(keyvaluesData)"
+                        class="btn btn-primary">DownloadFile</a></div>
+                  </td>
+                </tr>
+              </table>
+            </div> -->
+            <!-- <div *ngIf=" ocrType == 'Amazon Textract' || ocrType == 'Various'"><b>
+                <h6 *ngFor="let row of keyvaluesData">
+                  <div *ngIf="searchTest(row) else elseBlock">
+                    <div class="card text-danger bg-light">{{row}}</div>
+                  </div>
+                  <ng-template #elseBlock> {{row}} </ng-template>
+                </h6>
+              </b></div> -->
+          </div>
+
+          <div class="tab-pane" id="tabs-tables-14" role="tabpanel">
+            <img src={{waterplot}} alt="Cultivar Water plot" style="width:400px;height:400px;">
+
+            <img src={{water_trend}} alt="Water Trend" style="width:400px;height:400px;">
+
+            <img src={{heatmapwater[0]}} alt="Delta Pine heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapwater[1]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapwater[2]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapwater[3]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;">
+            <img src={{heatmapwater[4]}} alt="SVPR4 Heatmap" style="width:400px;height:400px;"> 
+          </div>
+
+          <div class="tab-pane" id="tabs-statcharts-14" role="tabpanel">
+            <img src={{statcpt}} alt="Stat CPT plot" style="width:400px;height:400px;">
+            <img src={{statprob}} alt="Stat PROB plot" style="width:400px;height:400px;">
+            <img src={{statprob_density}} alt="Stat PROB DENSITY plot" style="width:400px;height:400px;">
+          </div>
+          <div class="tab-pane" id="tabs-maplayers-14" role="tabpanel">
+            <!-- <a href={{yield_overlay}} alt="Yield Overlay" target="_blank" style="display: inline-block; width: 50px; height: 50px; background-image: url({{heatmapyield[0]}});"></a> -->
+            <a href={{yield_overlay}} alt="Yield Overlay" target="_blank"> <img src={{usa_mapimage}} alt="thumbnail-test" style="width:75px;height:75px;"><br/>Yield Overlay</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <hr>
+</div>
+<!-- Querying the data -->
+<!-- <div class="row">
+  <div class="col-md-6">
+    <div class="card mini-stats-wid">
+      <div class="card-body">
+        <div class="d-flex">
+          <div class="flex-grow-1">
+            <p class="text-muted fw-medium">Question (Coming Soon)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card mini-stats-wid">
+      <div class="card-body">
+        <div class="d-flex">
+          <div class="flex-grow-1">
+            <p class="text-muted fw-medium">The Answer (Coming Soon)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Query Ends-->
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box" [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>

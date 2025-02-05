@@ -1,0 +1,105 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card overflow-hidden">
+                    <div class="bg-primary bg-soft">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="text-primary p-4">
+                                    <h5 class="text-primary">Please Register Here</h5>
+                                </div>
+                            </div>
+                            <div class="col-5 align-self-end">
+                                <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="auth-logo">
+                            <!-- <a href="index.html" class="auth-logo-light">
+                                <div class="avatar-md profile-user-wid mb-4">
+                                    <span class="avatar-title rounded-circle bg-light">
+                                        <img src="assets/images/logo.PNG" alt="" class="rounded-circle" height="34">
+                                    </span>
+                                </div>
+                            </a> -->
+
+                            <a href="index.html" class="auth-logo-dark">
+                                <div class="avatar-md profile-user-wid mb-4">
+                                    <span class="avatar-title rounded-circle bg-light">
+                                        <img src="assets/images/gaiadhi-logo.png" alt="" class="rounded-circle" height="34">
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="p-2">
+                            <form [formGroup]="loginData" class="form-horizontal" (ngSubmit)="onSubmit()">
+
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Name </label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Name" formControlName="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Email  </label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <div class="input-group auth-pass-inputgroup">
+                                        <input [type]="password" class="form-control" placeholder="Enter password" formControlName="password" required>
+                                       
+
+
+                                        <button class="btn btn-light " type="button" id="password-addon" (click)="onClick()">
+                                            <i class="mdi mdi-eye-outline" *ngIf="!show"></i>
+                                            <i class="mdi mdi-eye-off" *ngIf="show"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Business Name </label>
+                                    <input type="text" class="form-control" id="bName" placeholder="Enter Business Name" formControlName="bName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="state" class="form-label">State </label>
+                                    <input type="text" class="form-control" id="bstate" placeholder="Enter State" formControlName="bstate" required>
+                                </div>
+                                <div class="mb-3">    
+                                    <label for="country" class="form-label">Country </label>
+                                    <input type="text" class="form-control" id="bcountry" placeholder="Enter Country" formControlName="bcountry" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Organization Type </label>
+                                    <!-- <input type="text" class="form-control" id="email" placeholder="Enter username" formControlName="b_name"> -->
+                                    <select class="form-control" formControlName="domain" required>
+                                        <option value="">-- Organization Type --</option>
+                                        <option value="University">University</option>
+                                        <option value="FSP">Farm Service Provider</option>
+                                        <option value="Investor">Lender / Investor</option>
+                                        <option value="Government">Government Departmemt</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                <div class="g-recaptcha" data-sitekey="6LfrcaglAAAAALcgkG2DpZPvCDDO7ilDb-fRcPjX"></div>
+                                </div>
+                                    <br/>
+                                    
+
+                                    <re-captcha (resolved)="resolved($event)" siteKey="6LfrcaglAAAAALcgkG2DpZPvCDDO7ilDb-fRcPjX"></re-captcha>
+                                <div class="mt-3 d-grid">
+                                    <button class="btn btn-primary waves-effect waves-light" type="submit">Submit</button>
+                                </div>
+
+
+                               
+                               
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

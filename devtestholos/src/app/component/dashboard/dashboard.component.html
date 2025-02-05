@@ -1,0 +1,132 @@
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Dashboard </h4>
+            <div class="page-title-right">
+                <button type="button" class="btn btn-info" onClick="window.location.reload();">Refresh</button>
+            </div>
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row">
+
+    <div class="col-xl-12">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <a routerLink="/statusWiseDetials/Inprogress">
+                        <div class="d-flex">
+                            <div class="flex-grow-1">
+                                <p class="text-muted fw-medium">Inprogress</p>
+                                <h4 class="mb-0">
+                                    <a routerLink='/statusWiseDetials/Inprogress'>{{inprogress.length}}</a>
+                                </h4>
+                            </div>
+
+                            <div class="flex-shrink-0 align-self-center">
+                                <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
+                                    <span class="avatar-title">
+                                        <i class="bx bx-copy-alt font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <a routerLink="/statusWiseDetials/Verified">
+                        <div class="d-flex">
+                            <div class="flex-grow-1">
+                                <p class="text-muted fw-medium">Verified</p>
+                                <h4 class="mb-0"><a routerLink="/statusWiseDetials/Verified">{{verified.length}}</a></h4>
+                            </div>
+
+                            <div class="flex-shrink-0 align-self-center ">
+                                <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                                    <span class="avatar-title rounded-circle bg-primary">
+                                        <i class="bx bx-archive-in font-size-24"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mini-stats-wid">
+                    <div class="card-body">
+                        <a routerLink="/">
+                            <div class="d-flex">
+                                <div class="flex-grow-1">
+                                    <p class="text-muted fw-medium">Total</p>
+                                    <h4 class="mb-0"><a routerLink="/">{{inprogress.length + verified.length}}</a>
+                                    </h4>
+                            </div>
+
+                    <div class="flex-shrink-0 align-self-center">
+                        <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                            <span class="avatar-title rounded-circle bg-primary">
+                                <i class="bx bx-purchase-tag-alt font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+</div>
+</div>
+<!-- end row -->
+
+
+<!-- end row -->
+<div class="row">
+<div *ngFor="let item of rowData">{{item.status}}</div>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Project List</h4>
+
+                
+  <!--                <ag-grid-angular style="height: 500px" class="ag-theme-alpine" [rowSelection]="rowSelection" [columnDefs]="columnDefs" [rowData]="rowData" [paginationAutoPageSize]="true" [pagination]="true" [defaultColDef]="defaultColDef" [modules]="mymodules" ></ag-grid-angular>
+      -->   
+   <ag-grid-angular style="height: 500px" class="ag-theme-alpine" [theme]="myTheme" [rowSelection]="rowSelection" [columnDefs]="columnDefs" [rowData]="rowData" [paginationAutoPageSize]="true" [pagination]="true" [defaultColDef]="defaultColDef" *ngIf="orgid != 'admin'" ></ag-grid-angular>
+            
+   <ag-grid-angular style="height: 500px" class="ag-theme-alpine" [columnDefs]="columnDefs_admin"
+                    [rowData]="rowData" [paginationAutoPageSize]="true" [pagination]="true"
+                    [defaultColDef]="defaultColDef" *ngIf="orgid == 'admin'"></ag-grid-angular>
+
+                <!-- end table-responsive -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<!-- container-fluid -->
+
+<!-- End Page-content -->

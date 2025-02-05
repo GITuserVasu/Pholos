@@ -1,0 +1,61 @@
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Organization</h4>
+            <div class="page-title-right">
+                <ul>
+                    <li><a href="" routerLink="../../organization/create" class="btn btn-primary">Add</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">List</h4>
+                <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                    <thead>
+                        <tr>
+                            <th>Org Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>username</th>
+                            <th>city</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr *ngFor="let row of OrgList">
+
+                            <td>{{row.org_name}}</td>
+                            <td>{{row.email}}</td>
+                            <td>{{row.phone}}</td>
+                            <td>{{row.username}}</td>
+                            <td>{{row.city}}</td>
+                            <td>
+                                <a href="" routerLink="/organization/create/{{row.id}}"><i class="fa fa-pencil"></i></a>
+                                <a href=""><i class="fa fa-trash" style="color:rgb(189, 0, 0);padding-left: 6px;"></i></a>
+                            </td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->

@@ -1,0 +1,23 @@
+2,3c2
+< import { CommonModule } from '@angular/common' ;
+< import { ReactiveFormsModule } from '@angular/forms' ;
+---
+> 
+6,8c5,7
+< import { LoginService } from '../../../../src/app/shared/services/login/login.service';
+< import { LogininfoService } from '../../../../src/app/shared/services/logininfo.service';
+< import { NotificationService } from '../../../../src/app/shared/services/notification.service';
+---
+> import { LoginService } from 'src/app/shared/services/login/login.service';
+> import { LogininfoService } from 'src/app/shared/services/logininfo.service';
+> import { NotificationService } from 'src/app/shared/services/notification.service';
+11,15c10,12
+<     selector: 'app-login',
+<     imports: [ CommonModule, ReactiveFormsModule ] ,
+<     templateUrl: './login.component.html',
+<     styleUrls: ['./login.component.css'],
+<     standalone: true
+---
+>   selector: 'app-login',
+>   templateUrl: './login.component.html',
+>   styleUrls: ['./login.component.css']
