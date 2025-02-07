@@ -74,7 +74,7 @@ export class DashboardComponent implements OnInit {
       
   
     } },
-    { headerName: 'Project', field: 'projectName',width: 200, maxWidth: 300, resizable: true, },
+    { headerName: 'Project', field: 'projectName',width: 400, maxWidth: 600, resizable: true, },
     //{ headerName: 'Folder', field: 'folderName',width: 200, maxWidth: 300,  resizable: true, },
    
     //{ headerName: 'File', field: 'fileName', width: 150, maxWidth: 500,  resizable: true,},
