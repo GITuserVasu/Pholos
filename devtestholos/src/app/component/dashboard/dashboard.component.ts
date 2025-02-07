@@ -86,7 +86,7 @@ export class DashboardComponent implements OnInit {
     }
   },
     {
-      headerName:'Action', cellRenderer:(param:any) =>{
+      headerName:'Action', width: 200, cellRenderer:(param:any) =>{
       console.log("cell", param)
       if(param.data['status'] == 'Inprogress'){
         return '<a class="btn btn-info btn-sm btn-rounded waves-effect waves-light" disabled >View Details</a>'
