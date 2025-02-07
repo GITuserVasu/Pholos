@@ -79,7 +79,7 @@ export class DashboardComponent implements OnInit {
    
     //{ headerName: 'File', field: 'fileName', width: 150, maxWidth: 500,  resizable: true,},
    
-    { headerName: 'Created', field: 'CreatedDate',  width: 200, maxWidth: 500,  resizable: true,
+    { headerName: 'Created', field: 'CreatedDate',  width: 300, maxWidth: 500,  resizable: true,
     valueGetter:(param:any) =>{
       return new Date(param.data['CreatedDate']).toLocaleString('en-US',{hour12:true});
       console.log("params",new Date(param.data['CreatedDate']).toLocaleString('en-US',{hour12:true}))
