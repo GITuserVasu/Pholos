@@ -79,14 +79,14 @@ export class DashboardComponent implements OnInit {
    
     //{ headerName: 'File', field: 'fileName', width: 150, maxWidth: 500,  resizable: true,},
    
-    { headerName: 'Created', field: 'CreatedDate',  width: 200, maxWidth: 500,  resizable: true,
+    { headerName: 'Created', field: 'CreatedDate',  width: 300, maxWidth: 500,  resizable: true,
     valueGetter:(param:any) =>{
       return new Date(param.data['CreatedDate']).toLocaleString('en-US',{hour12:true});
       console.log("params",new Date(param.data['CreatedDate']).toLocaleString('en-US',{hour12:true}))
     }
   },
     {
-      headerName:'Action', width: 200, cellRenderer:(param:any) =>{
+      headerName:'Action', width: 150, cellRenderer:(param:any) =>{
       console.log("cell", param)
       if(param.data['status'] == 'Inprogress'){
         return '<a class="btn btn-info btn-sm btn-rounded waves-effect waves-light" disabled >View Details</a>'
