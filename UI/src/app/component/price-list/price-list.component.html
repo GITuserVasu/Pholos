@@ -1,0 +1,153 @@
+<div class="demo10">
+    <div class="container">
+        <h4 class="py-4 text-center">Subscription Options</h4>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="pricingTable10">
+                    <div class="pricingTable-header">
+                        <h3 class="heading"> Individual </h3>
+                        <!-- <span class="price-value">
+                            <span class="currency">$</span> 9.99 
+                            <span class="month">/month </span>
+                        </span> -->
+                        <span class="price-value" style="font-size: 34px;">
+                            <span class="currency" style="font-size: 34px;
+                            top: -1px;">$ </span> 9.99 / month
+                            <span class="month"> </span>
+                        </span><br>
+                        <span class="price-value" style="    font-size: 24px;">
+                            <span class="currency" style="    font-size: 24px;
+                            top: 0px;left: -33px;">( $ </span> 99.99 / year)
+                            <span class="month"> </span>
+                        </span>
+                    </div>
+                    <div class="pricing-content">
+                        <ul>
+                            <li>Max 50 pages per document</li>
+                            <li>Max 30 documents per month</li>
+                            <li>Analysis - Meta Data</li>
+                            <li>Analysis - downloadable text </li>
+                            <li>Analysis - Field:Value pairs identified </li>
+                            <li>Analysis - Tables downloadable as CSV  </li>
+                        </ul>
+                        <a href="#" class="read" (click)="checkout('price_1N8C0wF3xgXrekg2Iq8XLuHu','Individual')">Monthly</a>&nbsp; &nbsp;
+                        <a href="#" class="read" (click)="checkout('price_1N8C0wF3xgXrekg2hDxEgrzs','Individual')">Yearly</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="pricingTable10">
+                    <div class="pricingTable-header">
+                        <h3 class="heading">Small Business </h3>
+                        <span class="price-value" style="font-size: 34px;">
+                            <span class="currency" style="font-size: 34px;
+                            top: -1px;">$ </span> 19.99 / month
+                            <span class="month"> </span>
+                        </span><br>
+                        <span class="price-value" style="    font-size: 24px;">
+                            <span class="currency" style="    font-size: 24px;
+                            top: 0px;left: -33px;">( $ </span> 199.99 / year)
+                            <span class="month"> </span>
+                        </span>
+                    </div>
+                    <div class="pricing-content">
+                        <ul>
+                            <li> Max 100 pages per document</li>
+                            <li>Max 100 documents per month</li>
+                            <li>Analysis - plus Summary</li>
+                            <li>Analysis - plus word/phrase tagging</li>
+                            <li>Analysis - plus CSV download</li>
+                            <li>Analysis - plus apply "rules" </li>
+                        </ul>
+
+                        <!-- <select class="form-control" (change)="price($event)">
+                            <option value="199.99">Monthly</option>
+                            <option value="999.99">Yearly</option>
+                        </select> -->
+                        <!-- <a href="#" class="read" (click)="checkout('price_1N8CBXF3xgXrekg2PEKpMxNC','SmallBusiness')">sign up</a> -->
+                        <a href="#" class="read" (click)="checkout('price_1N8CBXF3xgXrekg2PEKpMxNC','SmallBusiness')">Monthly</a>&nbsp; &nbsp; 
+                        <a href="#" class="read" (click)="checkout('price_1N8CBXF3xgXrekg2va68vTFf','SmallBusiness')">Yearly</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="pricingTable10">
+                    <div class="pricingTable-header">
+                        <h3 class="heading">Enterprise</h3>
+                        <!-- <span class="price-value">
+                            <span class="currency">$</span> 99.99
+                            <span class="month">/month</span>
+                        </span> -->
+                        <span class="price-value" style="font-size: 34px;">
+                            <span class="currency" style="font-size: 34px;
+                            top: -1px;">$ </span> 99.99 / month
+                            <span class="month"> </span>
+                        </span><br>
+                        <span class="price-value" style="    font-size: 24px;">
+                            <span class="currency" style="    font-size: 24px;
+                            top: 0px;left: -33px;">( $ </span> 999.99 / year)
+                            <span class="month"> </span>
+                        </span>
+                        
+                    </div>
+                    <div class="pricing-content">
+                        <ul>
+                            <li>UI and API access</li>
+                            <li>Max 500 pages per document</li>
+                            <li> Max 500 documents per month using API</li>
+                            <li>All Small Business Analysis</li>
+                            <li>Custom dashboard</li>
+                            <li>Domain/Function based Analysis </li>
+                            <li>Models based on history/projects</li>
+                        </ul>
+                        <a href="#" class="read" (click)="checkout('price_1N8CEoF3xgXrekg2n08kIvgJ','Enterprise')">Monthly</a>&nbsp; &nbsp;
+                        <a href="#" class="read" (click)="checkout('price_1N8CEoF3xgXrekg2BiMB7Kkf','Enterprise')">Yearly</a>
+                    </div>
+                </div>
+            </div>
+          
+            <!-- <div class="col-md-3 col-sm-6">
+                <div class="pricingTable10">
+                    <div class="pricingTable-header">
+                        <h3 class="heading">Premium</h3>
+                        <span class="price-value">
+                            <span class="currency">$</span> 30
+                            <span class="month">/mo</span>
+                        </span>
+                    </div>
+                    <div class="pricing-content">
+                        <ul>
+                            <li>70GB Disk Space</li>
+                            <li>70 Email Accounts</li>
+                            <li>70GB Monthly Bandwidth</li>
+                            <li>20 Subdomains</li>
+                            <li>25 Domains</li>
+                        </ul>
+                        <a href="#" class="read">sign up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="pricingTable10">
+                    <div class="pricingTable-header">
+                        <h3 class="heading">Extra</h3>
+                        <span class="price-value">
+                            <span class="currency">$</span> 40
+                            <span class="month">/mo</span>
+                        </span>
+                    </div>
+                    <div class="pricing-content">
+                        <ul>
+                            <li>80GB Disk Space</li>
+                            <li>80 Email Accounts</li>
+                            <li>80GB Monthly Bandwidth</li>
+                            <li>25 Subdomains</li>
+                            <li>30 Domains</li>
+                        </ul>
+                        <a href="#" class="read">sign up</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

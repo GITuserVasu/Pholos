@@ -1,0 +1,150 @@
+<div class="col-md-12" style="height: 500px">
+    <div class="card mini-stats-wid">
+        <div class="card-body">
+            <div class="scrollable" style="overflow-y: auto; max-height: 500px;">
+                <h3 class="card-title">Sentiment : {{sentiment_df =='N' ? "NEUTRAL" : ""}}</h3>
+                <h3 class="card-title">Language : {{dominant_language_df =='en' ? "ENGLISH" : ""}}</h3>
+
+                <ul class="nav nav-tabs nav-fill" data-bs-toggle="tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a href="#tabs-home-14" class="nav-link active" data-bs-toggle="tab" aria-selected="true"
+                            role="tab">Entities</a><br>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#tabs-profile-14" class="nav-link" data-bs-toggle="tab" aria-selected="false"
+                            tabindex="-1" role="tab">Pii Entities</a><br>
+                    </li>
+
+                    <!-- <li class="nav-item" role="presentation">
+                        <a href="#tabs-activity-14" class="nav-link" data-bs-toggle="tab" aria-selected="false"
+                            tabindex="-1" role="tab">Sentiment</a><br>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#tabs-tables-14" class="nav-link" data-bs-toggle="tab" aria-selected="false"
+                            tabindex="-1" role="tab">Sentiment</a><br>
+                    </li> -->
+                    <li class="nav-item" role="presentation">
+                        <a href="#tabs-DetectKey-14" class="nav-link" data-bs-toggle="tab" aria-selected="false"
+                            tabindex="-1" role="tab">Detect Key Phrases</a><br>
+                    </li>
+                    <!-- <li class="nav-item" role="presentation">
+                        <a href="#tabs-lang-14" class="nav-link" data-bs-toggle="tab" aria-selected="false"
+                            tabindex="-1" role="tab">language</a><br>
+                    </li> -->
+
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="tabs-home-14" role="tabpanel">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th *ngFor="let row of keyId_entities">
+                                    {{ row }}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let obj of entities">
+                                    <td *ngFor="let key of getKeys(obj)">
+                                        {{ getValue(obj, key) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="tabs-profile-14" role="tabpanel">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let row of keyId_pii_entities">
+                                        {{ row }}</th>
+                                </tr>
+                            </thead>
+                           
+                            <tbody>
+                                <tr *ngFor="let obj of pii_entities">
+                                    <td *ngFor="let key of getKeys(obj)">
+                                        {{ getValue(obj, key) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- <div class="tab-pane" id="tabs-activity-14" role="tabpanel">
+                        <h1>Testing</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let row of keyId_sentiment_df">
+                                        {{ row }}</th>
+                                </tr>
+                            </thead>
+                           
+                            <tbody>
+                                <tr *ngFor="let obj of sentiment_df">
+                                    <td *ngFor="let key of getKeys(obj)">
+                                        {{ getValue(obj, key) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="tabs-tables-14" role="tabpanel">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th  *ngFor="let row of keyId_Sentiment">
+                                        {{ row }}</th>
+                                </tr>
+                            </thead>
+                           
+                            <tbody>
+                                <tr *ngFor="let obj of Sentiment">
+                                    <td *ngFor="let key of getKeys(obj)">
+                                        {{ getValue(obj, key) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> -->
+                    <!-- <div class="tab-pane" id="tabs-lang-14" role="tabpanel">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th  *ngFor="let row of keyId_Sentiment">
+                                        {{ row }}</th>
+                                </tr>
+                            </thead>
+                           
+                            <tbody>
+                                <tr *ngFor="let obj of Sentiment">
+                                    <td *ngFor="let key of getKeys(obj)">
+                                        {{ getValue(obj, key) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> -->
+                    <div class="tab-pane" id="tabs-DetectKey-14" role="tabpanel">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th  *ngFor="let row of keyId_Detect_Key_Phrases">
+                                        {{ row }}</th>
+                                </tr>
+                            </thead>
+                           
+                            <tbody>
+                                <tr *ngFor="let obj of Detect_Key_Phrases">
+                                    <td *ngFor="let key of getKeys(obj)">
+                                        {{ getValue(obj, key) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

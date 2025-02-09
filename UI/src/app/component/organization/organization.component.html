@@ -1,0 +1,160 @@
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Organization</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Create Organization</h4>
+
+                <form [formGroup]="organizationData">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Organization Name</label>
+                                <input type="text" class="form-control" formControlName="org_name" [ngClass]="{ 'is-invalid': (submitted && form.org_name.errors)||(form.org_name.touched && form.org_name.errors) }">
+                                <div *ngIf="submitted||(form.org_name.touched && form.org_name.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.org_name.errors">Organization Name
+                              required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-firstname-input" class="form-label">Organization Id</label>
+                                <input type="text" class="form-control" formControlName="org_id" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-email-input" class="form-label">Email</label>
+                                <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': (submitted && form.email.errors)||(form.email.touched && form.email.errors) }">
+                                <div *ngIf="submitted||(form.email.touched && form.email.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.email.errors?.required">Email
+                                      required</small>
+                                      <small class="form-text error-message" *ngIf="form.email.errors?.email">Email
+                                        required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-email-input" class="form-label">Phone</label>
+                                <input type="email" class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid': (submitted && form.phone.errors)||(form.phone.touched && form.phone.errors) }">
+                                <div *ngIf="submitted||(form.phone.touched && form.phone.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.phone.errors">Phone
+                                      required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-email-input" class="form-label">Username</label>
+                                <input type="email" class="form-control" formControlName="username" [ngClass]="{ 'is-invalid': (submitted && form.username.errors)||(form.username.touched && form.username.errors) }">
+                                <div *ngIf="submitted||(form.username.touched && form.username.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.username.errors">Username
+                                      required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="formrow-password-input" class="form-label">Password</label>
+                                <input type="password" class="form-control" formControlName="password" [value]='generatePasswordOrg' [ngClass]="{ 'is-invalid': (submitted && form.password.errors)||(form.password.touched && form.password.errors) }" readonly>
+                                <div *ngIf="submitted||(form.password.touched && form.password.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.password.errors">Password
+                                      required</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="mb-3">
+                                <label for="formrow-inputCity" class="form-label">City</label>
+                                <input type="text" class="form-control" formControlName="city" [ngClass]="{ 'is-invalid': (submitted && form.city.errors)||(form.city.touched && form.city.errors) }">
+                                <div *ngIf="submitted||(form.city.touched && form.city.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.city.errors">City
+                                      required</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="mb-3">
+                                <label for="formrow-inputState" class="form-label">State</label>
+                                <input type="text" class="form-control" formControlName="state" [ngClass]="{ 'is-invalid': (submitted && form.state.errors)||(form.state.touched && form.state.errors) }">
+                                <div *ngIf="submitted||(form.state.touched && form.state.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.state.errors">State
+                                      required</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="mb-3">
+                                <label for="formrow-inputZip" class="form-label">Zip</label>
+                                <input type="text" class="form-control" id="formrow-inputZip" formControlName="zip" [ngClass]="{ 'is-invalid': (submitted && form.zip.errors)||(form.zip.touched && form.zip.errors) }">
+                                <div *ngIf="submitted||(form.zip.touched && form.zip.invalid)">
+                                    <small class="form-text error-message" *ngIf="form.zip.errors">Zip
+                                      required</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-4" *ngFor="let row of moduleList; let i = index">
+
+                            <div class="form-check">
+                                <label class=" form-check-label " for="gridCheck "> 
+                               
+                                    <input class="form-check-input" type="checkbox" formControlName="module" [value]="row.id" (click)="moduleAceess(row.id, i,$event)" [checked]='row.checked'>
+                               
+                                    {{row.name}} 
+                                </label>
+    
+                            </div>
+                            <!-- <div class="form-check form-check-inline" *ngFor="let rowdata of submenus(row.id); let index= index" style="padding-left:50px">
+                                <label class=" form-check-label " for="gridCheck "> 
+                               
+                                    <input class="form-check-input" type="checkbox" formControlName="sub_module" *ngIf="pushModuleList[i] == rowdata.menu_id as disabled;" (click)="submoduleAceess(rowdata.id, index,$event)" [value]="rowdata.id" >
+                               
+                                    {{rowdata.sub_menu}} 
+                                </label>
+    
+                            </div> -->
+                        </div>
+                    </div>
+                    
+
+
+                    <div>
+                        <input type="submit" (click)='submitData()' *ngIf="!idEditBtn" class="btn btn-primary w-md" value="Save">
+                        <input type="submit" (click)='updateData()' *ngIf="idEditBtn" class="btn btn-primary w-md" value="Update">
+                    </div>
+                </form>
+            </div>
+            <!-- end card body -->
+        </div>
+        <!-- end card -->
+    </div>
+    <!-- end col -->
+
+</div>
+<!-- end row -->
+
+<ngx-spinner>
+    <p style="font-size: 20px; color: white">Loading...</p>
+  </ngx-spinner>
