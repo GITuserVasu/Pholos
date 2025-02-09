@@ -26,7 +26,7 @@
                         <p class="text-muted fw-medium">Step 1 (Required): Choose Product</p>
                         <!-- <label> Pre-Season </label> &nbsp; &nbsp;   -->
                         <input class="form-check-input" type="radio" name="chooseproductradio" id="chooseproductradio1"
-                            (change)="radiobuttonchange3($event)" value="Pre-Season" formControlName="pre-season">
+                            (change)="radiobuttonchange3($event)" value="Pre-Season" formControlName="pre-season" checked>
                         &nbsp;
                         <label class="form-check-label" for="chooseproductradio1"> Pre-Season </label> &nbsp; &nbsp;
 
@@ -75,7 +75,7 @@
                                     <p class="text-muted fw-medium">Step 3 (Required): Choose/Upload X file</p>
                                     <div class="col-md-6">
                                         <input class="form-check-input" type="radio" name="XRadio" id="XRadio1"
-                                            (change)="radiobuttonchange($event)" value="Existing">
+                                            (change)="radiobuttonchange($event)" value="Existing" checked>
                                         &NonBreakingSpace;&NonBreakingSpace;
                                         <label class="form-check-label" for="XRadio1">
                                             Existing
@@ -129,7 +129,7 @@
                                         <div class="col-md-6">
 
                                             <input class="form-check-input" type="radio" name="CULRadio" id="CULRadio1"
-                                                (change)="radiobuttonchange1($event)" value="Existing">
+                                                (change)="radiobuttonchange1($event)" value="Existing" checked>
                                             &NonBreakingSpace;&NonBreakingSpace;
                                             <label class="form-check-label" for="CULRadio1">
                                                 Existing
@@ -188,7 +188,7 @@
                             <div class="col-md-6">
                                 <input class="form-check-input" type="radio" name="farmRadio" id="farmRadio1"
                                     (change)="radiobuttonchange4($event)" value="Existing"
-                                    formControlName="existingfarm">
+                                    formControlName="existingfarm" checked>
                                 &NonBreakingSpace;&NonBreakingSpace;
                                 <label class="form-check-label" for="farmRadio1">
                                     Existing Farm
