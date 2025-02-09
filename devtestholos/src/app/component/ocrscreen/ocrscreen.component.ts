@@ -92,7 +92,7 @@ export class OcrscreenComponent implements OnInit {
   pageCount: any;
   mymap: any;
   mydraw:any;
-  product_choice: any;
+  product_choice: any = "PRSEASON";
   coordinates: any;
   string_coords: any;
   useExistingFarm: boolean =  false;
