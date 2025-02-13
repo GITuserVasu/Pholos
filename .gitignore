@@ -5,4 +5,8 @@ UI/package-lock.json
 UI/package.json
 src/environments/
 UI/.angular/
+<<<<<<< HEAD
 backend/restart-holos-guni.sh
+=======
+backend/restart-holos-guni.sh
+>>>>>>> fd0234f0eb9178bcdc11966a336991d20a206120
