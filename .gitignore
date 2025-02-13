@@ -1,0 +1,7 @@
+UI/dist/
+UI/node_modules/
+UI/angular.json
+UI/package-lock.json
+UI/package.json
+src/environments/
+UI/.angular/

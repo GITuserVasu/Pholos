@@ -3,5 +3,5 @@ node_modules/
 angular.json
 package-lock.json
 package.json
-environments/
+src/environments/
 .angular/
