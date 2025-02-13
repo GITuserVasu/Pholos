@@ -42,10 +42,4 @@ testem.log
 Thumbs.db
 
 # Config files
-dist/
-node_modules/
-angular.json
-package-lock.json
-package.json
-src/environments/
-.angular/
+
